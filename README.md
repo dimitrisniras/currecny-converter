@@ -24,8 +24,8 @@ Before running the project, ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/dimitrisniras/currecny-converter.git
-cd currecny-converter
+git clone https://github.com/dimitrisniras/currency-converter.git
+cd currency-converter
 ```
 
 ### 2. Node.js Version
@@ -59,8 +59,8 @@ touch .env
 Add the following content to the .env file:
 
 ```env
-API_KEY=your-signaloid-api-key-here
-API_URL=https://api.signaloid.io/tasks
+SIGNALOID_API_KEY=your-signaloid-api-key-here
+SIGNALOID_API_URL=https://api.signaloid.io/tasks
 ```
 
 Replace `your-signaloid-api-key-here` with your actual API key obtained from the Signaloid API platform.

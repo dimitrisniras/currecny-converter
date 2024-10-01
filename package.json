@@ -1,5 +1,5 @@
 {
-  "name": "currecny-converter",
+  "name": "currency-converter",
   "version": "1.0.0",
   "description": "NodeJS command-line application that converts currency",
   "main": "index.js",

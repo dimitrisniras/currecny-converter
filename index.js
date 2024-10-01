@@ -78,7 +78,7 @@ async function fetchTaskResults(taskId) {
     if (response.data?.Stderr) {
       const stderrContent = await fetchFileContentWithRetry(response.data.Stderr);
       if (stderrContent) {
-        console.info(`Task Error ${stderrContent}`);
+        console.info(`Task Error: ${stderrContent}`);
         return;
       }
     }
@@ -88,9 +88,9 @@ async function fetchTaskResults(taskId) {
       const stdoutContent = await fetchFileContentWithRetry(response.data.Stdout);
 
       if (stdoutContent) {
-        stdoutContentSplited = stdoutContent.split(".");
-        if (stdoutContentSplited.length > 1) stdoutContentSplited[1] = stdoutContentSplited[1].slice(0, 2);
-        console.info(`\n\nCONVERTED VALUE: ${stdoutContentSplited.join(".")}\n\n`);
+        let stdoutContentSplitted = stdoutContent.split(".");
+        if (stdoutContentSplitted.length > 1) stdoutContentSplitted[1] = stdoutContentSplitted[1].slice(0, 2);
+        console.info(`\n\nCONVERTED VALUE: ${stdoutContentSplitted.join(".")}\n\n`);
       }
     }
   } catch (error) {
