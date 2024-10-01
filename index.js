@@ -28,9 +28,9 @@ async function convertCurrency(minRate, maxRate, value) {
         #include <uxhw.h>
 
         int main() {
-          double conversionRate = UxHwDoubleUniformDist(${minRate}, ${maxRate});
-          double convertedValue = ${value} * conversionRate;
-          printf("%lf\\n", convertedValue);
+          float conversionRate = UxHwFloatUniformDist(${minRate}, ${maxRate});
+          float convertedValue = ${value} * conversionRate;
+          printf("%f\\n", convertedValue);
           return 0;
         }
       `,
@@ -90,7 +90,7 @@ async function fetchTaskResults(taskId) {
       if (stdoutContent) {
         stdoutContentSplited = stdoutContent.split(".");
         if (stdoutContentSplited.length > 1) stdoutContentSplited[1] = stdoutContentSplited[1].slice(0, 2);
-        console.info(`Converted Value: ${stdoutContentSplited.join(".")}`);
+        console.info(`\n\nCONVERTED VALUE: ${stdoutContentSplited.join(".")}\n\n`);
       }
     }
   } catch (error) {
